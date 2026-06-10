@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICP Course Learning Map 2026 — St John Ambulance NT</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600;6..12,700;6..12,800&display=swap');
+:root{
+  --font:'Aptos','Nunito Sans','Segoe UI',Calibri,sans-serif;
+  --bg:#f0f2f5;--surface:#fff;--card:#fff;
+  --border:#dde1e8;--border2:#c8cdd7;
+  --w1c:#C0392B;--w1l:#FCEAE8;
+  --w2c:#1A6FB5;--w2l:#E5EEF8;
+  --w3c:#1E7E4E;--w3l:#E4F3EB;
+  --w4c:#7B3FA0;--w4l:#EFE5F5;
+  --w5c:#B85C00;--w5l:#F8EBD5;
+  --w6c:#2E6B8A;--w6l:#DDE9F0;
+  --accent:#1A6FB5;--gold:#b07d00;--gold-bg:#fdf8e8;
+  --text:#1a1d23;--text2:#4a5060;--muted:#7a8090;--light:#f7f8fa;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.55}
+
+/* ── HEADER ── */
+header{background:var(--surface);border-bottom:3px solid var(--w1c);padding:24px 36px 20px;display:flex;align-items:flex-start;gap:18px}
+.hlogo{width:48px;height:48px;flex-shrink:0;background:var(--w1c);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;font-weight:800}
+.hkicker{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+header h1{font-size:clamp(18px,3vw,30px);font-weight:800;line-height:1.1;margin-bottom:5px}
+header h1 em{font-style:normal;color:var(--w1c)}
+header p{color:var(--text2);font-size:12.5px;max-width:560px}
+.hbadges{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
+.hbadge{font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:12px;background:var(--light);border:1px solid var(--border2);color:var(--text2)}
+.hbadge.red{background:var(--w1l);border-color:var(--w1c);color:#7b1a12}
+.hbadge.live{background:#d4f7e7;border-color:#4caf82;color:#003d18}
+
+/* ── LEGEND ── */
+.legend{display:flex;gap:16px;flex-wrap:wrap;padding:10px 36px;background:var(--light);border-bottom:1px solid var(--border)}
+.leg{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.ldot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+
+/* ── TABS ── */
+.tabs{display:flex;padding:0 36px;background:var(--surface);border-bottom:2px solid var(--border);position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.tb{padding:11px 20px;background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;color:var(--muted);font-family:var(--font);font-size:12.5px;font-weight:700;cursor:pointer;transition:all .15s;white-space:nowrap}
+.tb:hover{color:var(--text);background:var(--light)}
+.tb.active{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* ── PANELS ── */
+.panel{display:none;padding:28px 36px}
+.panel.active{display:block}
+
+/* ── GITHUB CARD ── */
+.github-card{background:var(--surface);border:2px solid #4caf82;border-radius:10px;padding:20px 24px;margin-bottom:28px;position:relative;overflow:hidden}
+.github-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#1a6fb5,#1e7e4e,#4caf82)}
+.gh-title{font-size:14px;font-weight:800;color:var(--text);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.gh-badge{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:2px 8px;border-radius:10px;background:#d4f7e7;color:#003d18;border:1px solid #4caf82}
+.gh-desc{font-size:12.5px;color:var(--text2);margin-bottom:14px;line-height:1.6}
+.gh-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:16px}
+.gh-step{background:var(--light);border:1px solid var(--border);border-radius:7px;padding:11px 13px}
+.gh-step-num{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:4px}
+.gh-step-text{font-size:11.5px;color:var(--text2);line-height:1.5}
+.gh-step-text code{background:#e8f0f8;border-radius:3px;padding:1px 5px;font-size:10.5px;color:#0a2840}
+.gh-url-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.gh-url-input{flex:1;min-width:260px;background:var(--card);border:2px solid var(--border);border-radius:7px;padding:9px 12px;font-family:var(--font);font-size:12px;color:var(--text);outline:none;transition:border-color .2s}
+.gh-url-input:focus{border-color:var(--accent)}
+.gh-url-input::placeholder{color:var(--muted)}
+.gh-btn{padding:9px 18px;background:var(--accent);border:none;border-radius:7px;color:#fff;font-family:var(--font);font-size:12px;font-weight:700;cursor:pointer;transition:all .15s;white-space:nowrap}
+.gh-btn:hover{background:#145a9a}
+.gh-btn:disabled{background:var(--muted);cursor:default}
+.gh-status{font-size:11.5px;padding:5px 11px;border-radius:6px;font-weight:600}
+.gh-status.ok{background:#d4f7e7;color:#003d18}
+.gh-status.err{background:#ffe0e0;color:#5c0000}
+.gh-status.loading{background:#e8f0f8;color:#0a2840}
+
+/* ── WEEK NAV ── */
+.wk-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+.wk-nav-btn{padding:6px 16px;border:2px solid;border-radius:20px;font-family:var(--font);font-size:11px;font-weight:800;cursor:pointer;background:var(--surface);transition:all .15s;white-space:nowrap}
+.wk-nav-btn:hover{opacity:.85}
+.wk-nav-btn.w1{color:#7b1a12;border-color:var(--w1c);background:var(--w1l)}
+.wk-nav-btn.w2{color:#0d3d6b;border-color:var(--w2c);background:var(--w2l)}
+.wk-nav-btn.w3{color:#0e4428;border-color:var(--w3c);background:var(--w3l)}
+.wk-nav-btn.w4{color:#4a1f64;border-color:var(--w4c);background:var(--w4l)}
+.wk-nav-btn.w5{color:#6b3400;border-color:var(--w5c);background:var(--w5l)}
+.wk-nav-btn.w6{color:#173848;border-color:var(--w6c);background:var(--w6l)}
+
+/* ── WEEK BLOCK ── */
+.wk-block{margin-bottom:36px}
+.wk-hdr{display:flex;align-items:center;gap:12px;padding:12px 18px;border-radius:8px 8px 0 0}
+.wk-badge{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:2px solid rgba(255,255,255,.6);color:#fff;white-space:nowrap}
+.wk-title{font-size:14px;font-weight:800;color:#fff;flex:1}
+.wk-dates{font-size:11px;color:rgba(255,255,255,.8);font-weight:600;white-space:nowrap}
+
+/* ── TIMETABLE ── */
+.tt-wrap{overflow-x:auto;border-radius:0 0 8px 8px;border:1px solid var(--border);border-top:none}
+.tt{border-collapse:collapse;width:100%;min-width:700px;table-layout:fixed}
+.tt-th-time{width:58px;background:#3a3a3a;color:#fff;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:8px 4px;text-align:center;vertical-align:middle;border-right:1px solid #555}
+.tt-th-day{background:#555;color:#fff;text-align:center;padding:7px 8px;border-right:1px solid #666}
+.th-day{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.th-date{font-size:11px;font-weight:600;margin-top:2px;opacity:.9}
+.tt-time{width:58px;background:#f2f2f2;color:#444;font-size:9.5px;font-weight:800;text-align:center;vertical-align:middle;border-right:1px solid #ddd;border-bottom:1px solid #e8e8e8;padding:2px;white-space:nowrap}
+.tt-sess{padding:7px 9px;vertical-align:top;font-size:12px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08);line-height:1.4}
+.tt-sess strong{font-weight:700;display:block;margin-bottom:1px}
+.tt-sess small{font-size:10.5px;opacity:.8}
+.tt-lunch{text-align:center;vertical-align:middle;font-style:italic;font-size:11.5px;border-bottom:2px solid #ccc}
+.tt-empty{background:#fafafa;border-right:1px solid rgba(0,0,0,.05);border-bottom:1px solid rgba(0,0,0,.05)}
+.tt-theory{border-left:3px solid #1a6fb5}
+.tt-skills{border-left:3px solid #7b3fa0}
+.tt-sim{border-left:3px solid #1e7e4e}
+.tt-exam{border-left:3px solid #c0392b}
+.tt-new{border-left:3px solid #0a9c5a}
+.tt-lunch-row td{height:28px}
+
+/* ── OVERVIEW STATS ── */
+.ostats{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:24px}
+.osc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.osn{font-size:34px;font-weight:800;line-height:1;margin-bottom:4px}
+.c1{color:var(--w1c)}.c2{color:var(--w2c)}.c3{color:var(--w3c)}.c4{color:var(--w4c)}.c5{color:var(--gold)}
+.osl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+/* ── STUDY GUIDE ── */
+.sg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+.sgp{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s}
+.sgp:hover{border-color:var(--border2)}
+.sgph{display:flex;align-items:center;gap:10px;padding:11px 13px;cursor:pointer;user-select:none;background:var(--light);border-bottom:1px solid var(--border);transition:background .13s}
+.sgph:hover{background:#eef1f6}
+.sgp.open .sgph{background:var(--gold-bg);border-bottom-color:#e8d080}
+.pnum{font-size:16px;font-weight:800;color:var(--gold);min-width:28px}
+.pinfo{flex:1}
+.ptitle{font-size:12.5px;font-weight:700;color:var(--text)}
+.pwb{display:flex;gap:3px;flex-wrap:wrap;margin-top:2px}
+.mb{font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:10px;letter-spacing:.04em;text-transform:uppercase}
+.mb.w1{color:#7b1a12;background:var(--w1l)}
+.mb.w2{color:#0d3d6b;background:var(--w2l)}
+.mb.w3{color:#0e4428;background:var(--w3l)}
+.mb.w4{color:#4a1f64;background:var(--w4l)}
+.mb.w5{color:#6b3400;background:var(--w5l)}
+.mb.w6{color:#173848;background:var(--w6l)}
+.mb.new{color:#003d18;background:#d4f7e7;border:1px solid #80e4b0}
+.pchev{color:var(--muted);font-size:11px;transition:transform .2s}
+.sgp.open .pchev{transform:rotate(90deg)}
+.sgqs{display:none;padding:9px 13px}
+.sgp.open .sgqs{display:block}
+.sgq{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--text2);line-height:1.4}
+.sgq:last-child{border-bottom:none}
+.sqn{font-size:10.5px;font-weight:800;color:var(--muted);min-width:30px;flex-shrink:0;margin-top:1px}
+.sinput{width:100%;max-width:440px;background:var(--card);border:2px solid var(--border);border-radius:8px;padding:9px 12px;font-family:var(--font);font-size:12.5px;color:var(--text);outline:none;transition:border-color .2s}
+.sinput:focus{border-color:var(--accent)}
+.sinput::placeholder{color:var(--muted)}
+
+/* ── PROGRESS ── */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.pcard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px}
+.pcardtitle{font-size:12.5px;font-weight:800;color:var(--text);margin-bottom:8px}
+.pbwrap{height:6px;background:var(--border);border-radius:4px;overflow:hidden;margin-bottom:4px}
+.pb{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),#2e9bd0);transition:width .4s}
+.pstats{display:flex;justify-content:space-between;font-size:10.5px;color:var(--muted);font-weight:600;margin-bottom:8px}
+.qcheck{display:flex;gap:7px;align-items:flex-start;padding:4px 0;border-bottom:1px solid var(--border);cursor:pointer}
+.qcheck:last-child{border-bottom:none}
+.qcheck input{accent-color:var(--accent);width:13px;height:13px;flex-shrink:0;margin-top:2px;cursor:pointer}
+.qcheck label{font-size:11px;color:var(--text2);cursor:pointer;line-height:1.4}
+.qcheck.done label{color:var(--muted);text-decoration:line-through}
+
+/* ── OVERVIEW WEEK CARDS ── */
+.owgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.owc{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.owh{padding:11px 14px;display:flex;align-items:center;gap:10px}
+.owb{padding:0 14px 13px}
+.owt{font-size:11.5px;color:var(--text2);padding:3px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:5px}
+.owt:last-child{border-bottom:none}
+.owd{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.wbadge{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:2px solid;white-space:nowrap}
+.wbadge.w1{color:#7b1a12;border-color:var(--w1c);background:var(--w1l)}
+.wbadge.w2{color:#0d3d6b;border-color:var(--w2c);background:var(--w2l)}
+.wbadge.w3{color:#0e4428;border-color:var(--w3c);background:var(--w3l)}
+.wbadge.w4{color:#4a1f64;border-color:var(--w4c);background:var(--w4l)}
+.wbadge.w5{color:#6b3400;border-color:var(--w5c);background:var(--w5l)}
+.wbadge.w6{color:#173848;border-color:var(--w6c);background:var(--w6l)}
+.new-badge{font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:10px;background:#d4f7e7;color:#003d18;border:1px solid #80e4b0;margin-left:5px;vertical-align:middle}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  header,.legend,.tabs,.panel{padding-left:16px;padding-right:16px}
+  header{flex-direction:column}
+  .tabs{overflow-x:auto}
+  .wk-dates{display:none}
+}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--light)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hlogo">ICP</div>
+  <div>
+    <div class="hkicker">St John Ambulance Australia (NT) · ICP Induction Course 2026</div>
+    <h1>ICP Course <em>Learning Map</em></h1>
+    <p>Timetable, Study Guide and Progress Tracker for the 2026 ICP Induction Course. Timetable reflects the live Excel schedule — sync with GitHub to auto-update.</p>
+    <div class="hbadges">
+      <span class="hbadge red">📅 27 July – 4 September 2026</span>
+      <span class="hbadge">Block A: Weeks 1–5 · Block B: Week 6</span>
+      <span class="hbadge">26 Study Guide Parts · 210+ Questions</span>
+      <span class="hbadge live" id="sync-badge" style="display:none">⚡ Live from GitHub</span>
+    </div>
+  </div>
+</header>
+
+<div class="legend">
+  <div class="leg"><div class="ldot" style="background:#1a6fb5"></div>Theory</div>
+  <div class="leg"><div class="ldot" style="background:#7b3fa0;border:2px dashed #9a5ed4;background:transparent;width:12px;height:12px"></div>Skills</div>
+  <div class="leg"><div class="ldot" style="background:#1e7e4e"></div>Simulation</div>
+  <div class="leg"><div class="ldot" style="background:#c0392b"></div>Exam</div>
+  <div class="leg"><div class="ldot" style="background:#0a9c5a"></div>★ New 2026</div>
+  <div style="margin-left:auto;font-size:11px;color:var(--muted);font-weight:600">Timetable · Study Guide · Progress Tracker</div>
+</div>
+
+<div class="tabs">
+  <button class="tb active" onclick="showTab('overview')">Overview</button>
+  <button class="tb" onclick="showTab('timetable')">Timetable</button>
+  <button class="tb" onclick="showTab('studyguide')">Study Guide</button>
+  <button class="tb" onclick="showTab('tracker')">My Progress</button>
+</div>
+
+<!-- ═══ OVERVIEW ═══ -->
+<div id="tab-overview" class="panel active">
+  <div class="ostats">
+    <div class="osc"><div class="osn c1">6</div><div class="osl">Course Weeks</div></div>
+    <div class="osc"><div class="osn c2">26</div><div class="osl">Study Parts</div></div>
+    <div class="osc"><div class="osn c3">30</div><div class="osl">Teaching Days</div></div>
+    <div class="osc"><div class="osn c4">210+</div><div class="osl">Questions</div></div>
+    <div class="osc"><div class="osn c5">9</div><div class="osl">Assessments</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:9px;margin-bottom:26px">
+    <div style="background:var(--w1l);border:1px solid var(--w1c);border-radius:7px;padding:12px">
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#7b1a12;margin-bottom:4px">Before each session</div>
+      <div style="font-size:11.5px;color:var(--text2)">Open the Timetable tab, click a session to see which study guide parts to read beforehand.</div>
+    </div>
+    <div style="background:var(--w2l);border:1px solid var(--w2c);border-radius:7px;padding:12px">
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#0d3d6b;margin-bottom:4px">Study Guide tab</div>
+      <div style="font-size:11.5px;color:var(--text2)">Browse all 26 parts. Search by keyword. New 2026 parts 21–26 are highlighted in green.</div>
+    </div>
+    <div style="background:var(--w3l);border:1px solid var(--w3c);border-radius:7px;padding:12px">
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#0e4428;margin-bottom:4px">My Progress tab</div>
+      <div style="font-size:11.5px;color:var(--text2)">Check off questions as you review them. Progress saves in your browser automatically.</div>
+    </div>
+    <div style="background:var(--gold-bg);border:1px solid #e8d080;border-radius:7px;padding:12px">
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:4px">Key exam dates</div>
+      <div style="font-size:11.5px;color:var(--text2)">Resus Exam Fri 31 Jul · Trauma Exam Fri 7 Aug · Airway Exam Fri 14 Aug · ICP Exam Mon 17 Aug · ECG Exam Mon 24 Aug · Formative Practicals Week 6</div>
+    </div>
+  </div>
+  <div style="font-size:15px;font-weight:800;color:var(--text);margin-bottom:12px">
+    6-Week Course Structure
+    <span style="font-size:11.5px;font-weight:600;color:var(--muted);margin-left:8px">27 Jul – 4 Sep 2026 · Winnellie Education Room 1/2, Darwin</span>
+  </div>
+  <div class="owgrid">
+    <div class="owc"><div class="owh"><span class="wbadge w1">Week 1</span><span style="font-size:12.5px;font-weight:700">27–31 Jul</span></div><div class="owb">
+      <div class="owt"><div class="owd" style="background:var(--w1c)"></div>Course Opening &amp; Knowledge Test</div>
+      <div class="owt"><div class="owd" style="background:var(--w1c)"></div>Intensive Care Resuscitation &amp; HCPR</div>
+      <div class="owt"><div class="owd" style="background:var(--w1c)"></div>Airway Vortex &amp; BVM Basics</div>
+      <div class="owt"><div class="owd" style="background:var(--w1c)"></div>Cardiogenic Shock &amp; ROSC</div>
+      <div class="owt"><div class="owd" style="background:var(--w1c)"></div>Respiratory · Renal · Sepsis</div>
+      <div class="owt"><div class="owd" style="background:var(--w1c)"></div>★ Human Factors 1 · ⚠ Resuscitation Exam</div>
+    </div></div>
+    <div class="owc"><div class="owh"><span class="wbadge w2">Week 2</span><span style="font-size:12.5px;font-weight:700">3–7 Aug</span></div><div class="owb">
+      <div class="owt"><div class="owd" style="background:var(--w2c)"></div>Infusions &amp; Syringe Drivers</div>
+      <div class="owt"><div class="owd" style="background:var(--w2c)"></div>Trauma 1 &amp; 2 · Patient Entrapment</div>
+      <div class="owt"><div class="owd" style="background:var(--w2c)"></div>★ Paediatrics Full Day</div>
+      <div class="owt"><div class="owd" style="background:var(--w2c)"></div>★ Obstetrics Full Day (Specialist)</div>
+      <div class="owt"><div class="owd" style="background:var(--w2c)"></div>★ Human Factors 2 · ABD</div>
+      <div class="owt"><div class="owd" style="background:var(--w2c)"></div>⚠ Trauma Exam · TBI &amp; Neuro</div>
+    </div></div>
+    <div class="owc"><div class="owh"><span class="wbadge w3">Week 3</span><span style="font-size:12.5px;font-weight:700">10–14 Aug</span></div><div class="owb">
+      <div class="owt"><div class="owd" style="background:var(--w3c)"></div>Post-Intubation Cares</div>
+      <div class="owt"><div class="owd" style="background:var(--w3c)"></div>Surgical Cric &amp; FONA · Skills 4</div>
+      <div class="owt"><div class="owd" style="background:var(--w3c)"></div>★ Thoracic Trauma Full Day</div>
+      <div class="owt"><div class="owd" style="background:var(--w3c)"></div>Mechanical Ventilation</div>
+      <div class="owt"><div class="owd" style="background:var(--w3c)"></div>★ Human Factors 3 · Leadership</div>
+      <div class="owt"><div class="owd" style="background:var(--w3c)"></div>⚠ Airway Exam · Toxicology</div>
+    </div></div>
+    <div class="owc"><div class="owh"><span class="wbadge w4">Week 4</span><span style="font-size:12.5px;font-weight:700">17–21 Aug</span></div><div class="owb">
+      <div class="owt"><div class="owd" style="background:var(--w4c)"></div>⚠ ICP Course Exam</div>
+      <div class="owt"><div class="owd" style="background:var(--w4c)"></div>ICP Simulation 4/3 · Retrieval</div>
+      <div class="owt"><div class="owd" style="background:var(--w4c)"></div>★ Human Factors 4: CRM</div>
+      <div class="owt"><div class="owd" style="background:var(--w4c)"></div>Prolonged Field Care · Remote</div>
+      <div class="owt"><div class="owd" style="background:var(--w4c)"></div>Darwin/Ambulance Simulation 4/4</div>
+    </div></div>
+    <div class="owc"><div class="owh"><span class="wbadge w5">Week 5</span><span style="font-size:12.5px;font-weight:700">24–28 Aug</span></div><div class="owb">
+      <div class="owt"><div class="owd" style="background:var(--w5c)"></div>⚠ 12-Lead ECG Exam</div>
+      <div class="owt"><div class="owd" style="background:var(--w5c)"></div>★ NTES · NTFIRE · TRG Interoperability</div>
+      <div class="owt"><div class="owd" style="background:var(--w5c)"></div>★ Darwin Airport Fire Interoperability</div>
+      <div class="owt"><div class="owd" style="background:var(--w5c)"></div>★ TOLL Aeromedical — Winch Exercise</div>
+      <div class="owt"><div class="owd" style="background:var(--w5c)"></div>Vertical Rescue · USAR · Tactical</div>
+    </div></div>
+    <div class="owc"><div class="owh"><span class="wbadge w6">Week 6</span><span style="font-size:12.5px;font-weight:700">31 Aug – 4 Sep</span></div><div class="owb">
+      <div class="owt"><div class="owd" style="background:var(--w6c)"></div>⚠ Formative Practical Assessments</div>
+      <div class="owt"><div class="owd" style="background:var(--w6c)"></div>⚠ Theory Viva / ECG Exam Viva</div>
+      <div class="owt"><div class="owd" style="background:var(--w6c)"></div>★ Human Factors 5: Reflective Practice</div>
+      <div class="owt"><div class="owd" style="background:var(--w6c)"></div>Gap Analysis &amp; Supplementary Scenarios</div>
+      <div class="owt"><div class="owd" style="background:var(--w6c)"></div>Theatre Prep · Course Close</div>
+    </div></div>
+  </div>
+  <div style="margin-top:20px;padding:13px;background:var(--gold-bg);border:1px solid #e8d080;border-radius:7px;font-size:12.5px;color:var(--text2)">
+    <strong style="color:var(--gold)">★ New in 2026 — </strong>Six new study guide parts added: <strong>Part 21 Sepsis</strong>, <strong>Part 22 Human Factors &amp; CRM</strong>, <strong>Part 23 Obstetrics &amp; Maternal Health</strong>, <strong>Part 24 Paediatric Emergencies</strong>, <strong>Part 25 Neurological Emergencies &amp; Stroke</strong>, <strong>Part 26 Traumatic Brain Injury</strong>.
+  </div>
+</div>
+
+<!-- ═══ TIMETABLE ═══ -->
+<div id="tab-timetable" class="panel">
+
+  <!-- GitHub auto-update card -->
+  <div class="github-card">
+    <div class="gh-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:#1e7e4e"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      GitHub Auto-Update
+      <span class="gh-badge">Live Sync</span>
+    </div>
+    <div class="gh-desc">
+      When this file and the Excel timetable are hosted in a <strong>GitHub repository</strong>, the timetable below will automatically reload the latest version of the Excel whenever you open this page — no manual updates needed. Every time the Excel is edited and committed to GitHub, visitors see the updated timetable.
+    </div>
+    <div class="gh-steps">
+      <div class="gh-step">
+        <div class="gh-step-num">Step 1 — Create repo</div>
+        <div class="gh-step-text">Go to <strong>github.com</strong> → New repository. Upload both this HTML file and the Excel file (<code>ICP_Course_Timetable_2026_MERGED.xlsx</code>) to the repo.</div>
+      </div>
+      <div class="gh-step">
+        <div class="gh-step-num">Step 2 — Enable Pages</div>
+        <div class="gh-step-text">In the repo Settings → Pages → set Source to <strong>Deploy from branch → main → / (root)</strong>. Your site will be live at <code>https://USERNAME.github.io/REPO/</code>.</div>
+      </div>
+      <div class="gh-step">
+        <div class="gh-step-num">Step 3 — Get raw URL</div>
+        <div class="gh-step-text">In the repo, click the Excel file → click <strong>Raw</strong>. Copy the URL — it will look like <code>https://raw.githubusercontent.com/USERNAME/REPO/main/ICP_Course_Timetable_2026_MERGED.xlsx</code></div>
+      </div>
+      <div class="gh-step">
+        <div class="gh-step-num">Step 4 — Paste URL below</div>
+        <div class="gh-step-text">Paste the raw URL in the box below and click <strong>Save &amp; Load</strong>. From then on, every time you (or anyone) opens this page, the timetable fetches the latest Excel automatically.</div>
+      </div>
+    </div>
+    <div class="gh-url-row">
+      <input class="gh-url-input" id="gh-url" type="url"
+        placeholder="https://raw.githubusercontent.com/USERNAME/REPO/main/ICP_Course_Timetable_2026_MERGED.xlsx">
+      <button class="gh-btn" id="gh-save-btn" onclick="saveGhUrl()">Save &amp; Load</button>
+      <button class="gh-btn" id="gh-clear-btn" onclick="clearGhUrl()" style="background:#e0e4ea;color:var(--text2);display:none">Clear URL</button>
+      <span class="gh-status" id="gh-status" style="display:none"></span>
+    </div>
+    <div style="margin-top:8px;font-size:11px;color:var(--muted)">
+      💡 Once set, this URL is saved in your browser. Anyone who opens the page from GitHub Pages will also get the live version. To update the timetable: edit the Excel → commit &amp; push to GitHub → done.
+    </div>
+  </div>
+
+  <!-- Week quick-nav -->
+  <div class="wk-nav">
+    <button class="wk-nav-btn w1" onclick="jumpTo('wk-w1')">Week 1 — 27–31 Jul</button>
+    <button class="wk-nav-btn w2" onclick="jumpTo('wk-w2')">Week 2 — 3–7 Aug</button>
+    <button class="wk-nav-btn w3" onclick="jumpTo('wk-w3')">Week 3 — 10–14 Aug</button>
+    <button class="wk-nav-btn w4" onclick="jumpTo('wk-w4')">Week 4 — 17–21 Aug</button>
+    <button class="wk-nav-btn w5" onclick="jumpTo('wk-w5')">Week 5 — 24–28 Aug</button>
+    <button class="wk-nav-btn w6" onclick="jumpTo('wk-w6')">Week 6 — 31 Aug–4 Sep</button>
+  </div>
+
+  <!-- Timetable (rendered from Excel data) -->
+  <div id="tt-container">
+  
+<div class="wk-block" id="wk-w1">
+  <div class="wk-hdr" style="background:#C0392B">
+    <span class="wk-badge" style="border-color:#FFFFFF">Week 1</span>
+    <span class="wk-title">Week 1 — Foundation, Baseline Assessment and Core Resuscitation</span>
+    <span class="wk-dates">Mon 27 Jul – Fri 31 Jul</span>
+  </div>
+  <div class="tt-wrap">
+  <table class="tt">
+    <thead>
+      <tr>
+        <th class="tt-th-time">TIME</th>
+<th class="tt-th-day"><div class="th-day">MON</div><div class="th-date">Mon 27 Jul</div></th>
+<th class="tt-th-day"><div class="th-day">TUE</div><div class="th-date">Tue 28 Jul</div></th>
+<th class="tt-th-day"><div class="th-day">WED</div><div class="th-date">Wed 29 Jul</div></th>
+<th class="tt-th-day"><div class="th-day">THU</div><div class="th-date">Thu 30 Jul</div></th>
+<th class="tt-th-day"><div class="th-day">FRI</div><div class="th-date">Fri 31 Jul</div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tt-time">08:00</td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Course Opening & Introduction</strong><br><small style="font-weight:400;opacity:.85">ICP Pathway overview and expectations</small></td>
+        <td rowspan="5" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ Human Factors 1: Foundations</strong><br><small style="font-weight:400;opacity:.85">Self-awareness · communication · team safety</small></td>
+        <td rowspan="5" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Respiratory Emergencies</strong><br><small style="font-weight:400;opacity:.85">Asthma · COPD · APO · respiratory failure</small></td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Advanced Assessment & Critical Decision-Making</strong></td>
+        <td rowspan="5" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Shock and Sepsis (continued)</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">08:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">09:00</td>
+        <td rowspan="3" class="tt-sess tt-exam" style="background:#FFD0D0;color:#5C0000"><strong>⚠ Knowledge Test</strong><br><small style="font-weight:400;opacity:.85">Pre-learning assessment</small></td>
+        <td rowspan="6" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Advanced Cardiac Care</strong><br><small style="font-weight:400;opacity:.85">ECG interpretation · ACS · cardiac emergencies</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">09:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">10:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">10:30</td>
+        <td rowspan="3" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Intensive Care Resuscitation</strong><br><small style="font-weight:400;opacity:.85">EBM · COACHED · HCPR · LUCAS · Checklists</small></td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Intensive Care Management of Cardiogenic Shock</strong></td>
+        <td rowspan="3" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Cardiac Arrest Management Scenarios (ICP Level)</strong><br><small style="font-weight:400;opacity:.85">Simple / simple | difficulty 1/4</small></td>
+        <td rowspan="3" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Capnography</strong><br><small style="font-weight:400;opacity:.85">Clinical applications</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">11:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">11:30</td>
+        <td class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>ROSC Management</strong><br><small style="font-weight:400;opacity:.85">(Project 1: 10-min PPT + 2 EBM interventions)</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">12:00</td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">12:30</td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Airway Vortex & Basic Airway Management</strong><br><small style="font-weight:400;opacity:.85">i-gel · ramping · BVM</small></td>
+        <td rowspan="3" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Introduction to ICP Advanced Airway Management</strong></td>
+        <td rowspan="3" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>SALAD Demonstration and Simulation</strong></td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>STEMI and ECG Recognition</strong></td>
+        <td rowspan="2" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>ROSC Scenarios</strong><br><small style="font-weight:400;opacity:.85">Simple / simple | difficulty 1/4</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">13:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">13:30</td>
+        <td class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Introduction to Simulation & Feedback Process</strong></td>
+        <td class="tt-sess tt-skills" style="background:#E5D0F5;color:#2A0A50"><strong>Skills 2: Pacing / Cardioversion</strong></td>
+        <td class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Resuscitation PowerPoint Presentations</strong><br><small style="font-weight:400;opacity:.85">(Student project 1)</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">14:00</td>
+        <td rowspan="6" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Cardiac Arrest Scenarios</strong><br><small style="font-weight:400;opacity:.85">Simple / simple | difficulty 1/4</small></td>
+        <td rowspan="6" class="tt-sess tt-skills" style="background:#E5D0F5;color:#2A0A50"><strong>Skills 1: Rotate 3 Stations</strong><br><small style="font-weight:400;opacity:.85">1) ETT / tracheal suction / bougie 2) Gastric tube / i-gel / Magill forceps 3) BVM assist / TBI assist / PEEP-ZOLL</small></td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Renal and Electrolyte Imbalance</strong></td>
+        <td rowspan="6" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Cardiac Arrest Management Scenarios</strong><br><small style="font-weight:400;opacity:.85">Simple / simple | difficulty 1/4</small></td>
+        <td rowspan="2" class="tt-sess tt-exam" style="background:#FFD0D0;color:#5C0000"><strong>⚠ Resuscitation Exam</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">14:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">15:00</td>
+        <td rowspan="4" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Shock and Sepsis</strong></td>
+        <td rowspan="4" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Patient Packaging / High-Acuity Cases & Reflections</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">15:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">16:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">16:30</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="wk-block" id="wk-w2">
+  <div class="wk-hdr" style="background:#1A6FB5">
+    <span class="wk-badge" style="border-color:#FFFFFF">Week 2</span>
+    <span class="wk-title">Week 2 — Trauma, Paediatrics, Obstetrics and Advanced Resuscitation</span>
+    <span class="wk-dates">Mon 3 Aug – Fri 7 Aug</span>
+  </div>
+  <div class="tt-wrap">
+  <table class="tt">
+    <thead>
+      <tr>
+        <th class="tt-th-time">TIME</th>
+<th class="tt-th-day"><div class="th-day">MON</div><div class="th-date">Mon 3 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">TUE</div><div class="th-date">Tue 4 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">WED</div><div class="th-date">Wed 5 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">THU</div><div class="th-date">Thu 6 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">FRI</div><div class="th-date">Fri 7 Aug</div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tt-time">08:00</td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Resuscitation Exam Feedback</strong></td>
+        <td rowspan="5" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Complex Case Management</strong><br><small style="font-weight:400;opacity:.85">(Project 2: 10-min PPT reflection on a complex case)</small></td>
+        <td rowspan="5" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ Paediatrics</strong><br><small style="font-weight:400;opacity:.85">Paediatric emergencies — theory</small></td>
+        <td rowspan="8" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ Obstetric Emergencies</strong><br><small style="font-weight:400;opacity:.85">(Full Day — Specialist) Assessment · MgSO₄ · Neopuff · HELPERR · scenarios</small></td>
+        <td rowspan="8" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>ICP Simulation Scenarios</strong><br><small style="font-weight:400;opacity:.85">Complex / simple | difficulty 2/4</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">08:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">09:00</td>
+        <td rowspan="5" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Introduction to Infusions and Syringe Drivers</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">09:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">10:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">10:30</td>
+        <td rowspan="3" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Trauma 2: Limb & Pelvic Trauma</strong><br><small style="font-weight:400;opacity:.85">Neurogenic shock · cervical spine</small></td>
+        <td rowspan="3" class="tt-sess tt-skills" style="background:#E5D0F5;color:#2A0A50"><strong>Skills 3: Paediatric ICP Skills</strong><br><small style="font-weight:400;opacity:.85">1) Paediatric intubation 2) Paediatric infusions 3) Paediatric cardiac arrest</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">11:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">11:30</td>
+        <td class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Patient Packaging</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">12:00</td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">12:30</td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Trauma 1: Traumatic Haemorrhage</strong></td>
+        <td rowspan="3" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>ICP Simulation Scenarios</strong><br><small style="font-weight:400;opacity:.85">Complex / simple | difficulty 2/4</small></td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Scene Leadership</strong></td>
+        <td rowspan="9" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ Newborn Resuscitation, Neonates & Scenarios</strong><br><small style="font-weight:400;opacity:.85">(Specialist-led afternoon)</small></td>
+        <td rowspan="4" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Traumatic Brain Injury and Neurological Conditions</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">13:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">13:30</td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Patient Entrapment</strong></td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Procedural Sedation and Checklist</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">14:00</td>
+        <td rowspan="6" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Tachycardias and Dysrhythmias</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">14:30</td>
+        <td rowspan="5" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ Human Factors 2</strong><br><small style="font-weight:400;opacity:.85">Situational awareness & decision-making under pressure</small></td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Acute Behavioural Disturbance</strong></td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Complex Case Management — PPT Presentations</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">15:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">15:30</td>
+        <td rowspan="3" class="tt-sess tt-skills" style="background:#E5D0F5;color:#2A0A50"><strong>Micro-Sim / Skills</strong><br><small style="font-weight:400;opacity:.85">1) ETT intubation 2) Procedural sedation & cardioversion</small></td>
+        <td rowspan="3" class="tt-sess tt-exam" style="background:#FFD0D0;color:#5C0000"><strong>⚠ Trauma Exam</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">16:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">16:30</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="wk-block" id="wk-w3">
+  <div class="wk-hdr" style="background:#1E7E4E">
+    <span class="wk-badge" style="border-color:#FFFFFF">Week 3</span>
+    <span class="wk-title">Week 3 — Advanced Airway, Ventilation, Thoracic Trauma and Leadership</span>
+    <span class="wk-dates">Mon 10 Aug – Fri 14 Aug</span>
+  </div>
+  <div class="tt-wrap">
+  <table class="tt">
+    <thead>
+      <tr>
+        <th class="tt-th-time">TIME</th>
+<th class="tt-th-day"><div class="th-day">MON</div><div class="th-date">Mon 10 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">TUE</div><div class="th-date">Tue 11 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">WED</div><div class="th-date">Wed 12 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">THU</div><div class="th-date">Thu 13 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">FRI</div><div class="th-date">Fri 14 Aug</div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tt-time">08:00</td>
+        <td rowspan="5" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Post-Intubation Cares and Checklist</strong><br><small style="font-weight:400;opacity:.85">(Project 3: 10-min medication PPT)</small></td>
+        <td rowspan="5" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Mechanical Ventilation</strong></td>
+        <td rowspan="8" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ Finger Thoracostomy & Thoracic Trauma</strong><br><small style="font-weight:400;opacity:.85">(Full Day AM) Anatomy · practical skills · indications</small></td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Traumatic Cardiac Arrest / HOTT Protocol</strong></td>
+        <td rowspan="2" class="tt-sess tt-exam" style="background:#FFD0D0;color:#5C0000"><strong>⚠ Airway Exam</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">08:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">09:00</td>
+        <td rowspan="5" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>ICP Simulation Scenarios</strong><br><small style="font-weight:400;opacity:.85">Complex / simple | difficulty 2/4</small></td>
+        <td rowspan="6" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>ICP Simulation Scenarios</strong><br><small style="font-weight:400;opacity:.85">Simple / complex | difficulty 3/4</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">09:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">10:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">10:30</td>
+        <td rowspan="3" class="tt-sess tt-skills" style="background:#E5D0F5;color:#2A0A50"><strong>Surgical Cricothyroidotomy & FONA</strong><br><small style="font-weight:400;opacity:.85">Skills 4: FONA and Rapid O₂</small></td>
+        <td rowspan="3" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Mechanical Ventilation — ICP Simulation</strong><br><small style="font-weight:400;opacity:.85">Simple / simple | difficulty 1/4</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">11:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">11:30</td>
+        <td class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Medical PowerPoint Presentations</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">12:00</td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">12:30</td>
+        <td rowspan="4" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Difficult Airway, 30-Second Drills & Vortex</strong><br><small style="font-weight:400;opacity:.85">ICP simulation — Complex / simple | difficulty 2/4</small></td>
+        <td rowspan="4" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>External Jugular Cannulation</strong></td>
+        <td rowspan="9" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ Thoracostomy Scenarios & Consolidation</strong><br><small style="font-weight:400;opacity:.85">(Full Day PM)</small></td>
+        <td rowspan="4" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ Human Factors 3</strong><br><small style="font-weight:400;opacity:.85">Leadership and Graded Assertiveness</small></td>
+        <td rowspan="4" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Reflection and Clinical Mentoring</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">13:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">13:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">14:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">14:30</td>
+        <td rowspan="2" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Paediatric Cricothyroidotomy ICP Simulation</strong></td>
+        <td rowspan="5" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Complex Airway Cases</strong></td>
+        <td rowspan="5" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Resuscitate Before You Intubate</strong></td>
+        <td rowspan="5" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Toxicology and Envenomation</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">15:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">15:30</td>
+        <td rowspan="3" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Trauma Exam Feedback</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">16:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">16:30</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="wk-block" id="wk-w4">
+  <div class="wk-hdr" style="background:#7B3FA0">
+    <span class="wk-badge" style="border-color:#FFFFFF">Week 4</span>
+    <span class="wk-title">Week 4 — Advanced Practice Readiness, Remote Retrieval and High-Complexity Simulation</span>
+    <span class="wk-dates">Mon 17 Aug – Fri 21 Aug</span>
+  </div>
+  <div class="tt-wrap">
+  <table class="tt">
+    <thead>
+      <tr>
+        <th class="tt-th-time">TIME</th>
+<th class="tt-th-day"><div class="th-day">MON</div><div class="th-date">Mon 17 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">TUE</div><div class="th-date">Tue 18 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">WED</div><div class="th-date">Wed 19 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">THU</div><div class="th-date">Thu 20 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">FRI</div><div class="th-date">Fri 21 Aug</div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tt-time">08:00</td>
+        <td rowspan="5" class="tt-sess tt-exam" style="background:#FFD0D0;color:#5C0000"><strong>⚠ ICP Course Exam</strong><br><small style="font-weight:400;opacity:.85">Advanced practice readiness assessment</small></td>
+        <td rowspan="5" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Prolonged Field Care / NT Remote Care</strong></td>
+        <td rowspan="5" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Spinal Injuries</strong></td>
+        <td rowspan="8" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>ICP Simulation Scenarios — Darwin / Ambulance</strong><br><small style="font-weight:400;opacity:.85">Complex / complex | difficulty 4/4</small></td>
+        <td rowspan="8" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>ICP Simulation Scenarios — Darwin / Ambulance</strong><br><small style="font-weight:400;opacity:.85">Complex / complex | difficulty 4/4</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">08:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">09:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">09:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">10:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">10:30</td>
+        <td rowspan="3" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>ICP Simulation Scenarios</strong><br><small style="font-weight:400;opacity:.85">Simple / complex | difficulty 4/3</small></td>
+        <td rowspan="3" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ Human Factors 4</strong><br><small style="font-weight:400;opacity:.85">Crisis Resource Management</small></td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Single Responding Factors</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">11:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">11:30</td>
+        <td class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Single Responding ICP Simulation</strong><br><small style="font-weight:400;opacity:.85">Complex / complex | difficulty 4/4</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">12:00</td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">12:30</td>
+        <td rowspan="9" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Retrieval Services and Integration</strong><br><small style="font-weight:400;opacity:.85">(Afternoon full block)</small></td>
+        <td rowspan="4" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Prolonged Transport Planning</strong><br><small style="font-weight:400;opacity:.85">VACMATT and Bridge</small></td>
+        <td rowspan="9" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Single Responding ICP Simulation</strong><br><small style="font-weight:400;opacity:.85">Complex / complex | difficulty 4/4</small></td>
+        <td rowspan="9" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>ICP Simulation Scenarios — Darwin / Ambulance</strong><br><small style="font-weight:400;opacity:.85">Complex / complex | difficulty 4/4 (PM)</small></td>
+        <td rowspan="6" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>ICP Simulation Scenarios — Darwin / Ambulance</strong><br><small style="font-weight:400;opacity:.85">Complex / complex | difficulty 4/4</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">13:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">13:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">14:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">14:30</td>
+        <td rowspan="5" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Pharmacology in Haemodynamically Unstable Patients</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">15:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">15:30</td>
+        <td rowspan="3" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Exam Feedback</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">16:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">16:30</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="wk-block" id="wk-w5">
+  <div class="wk-hdr" style="background:#B85C00">
+    <span class="wk-badge" style="border-color:#FFFFFF">Week 5</span>
+    <span class="wk-title">Week 5 — Operational Readiness Phase</span>
+    <span class="wk-dates">Mon 24 Aug – Fri 28 Aug</span>
+  </div>
+  <div class="tt-wrap">
+  <table class="tt">
+    <thead>
+      <tr>
+        <th class="tt-th-time">TIME</th>
+<th class="tt-th-day"><div class="th-day">MON</div><div class="th-date">Mon 24 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">TUE</div><div class="th-date">Tue 25 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">WED</div><div class="th-date">Wed 26 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">THU</div><div class="th-date">Thu 27 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">FRI</div><div class="th-date">Fri 28 Aug</div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tt-time">08:00</td>
+        <td rowspan="5" class="tt-sess tt-exam" style="background:#FFD0D0;color:#5C0000"><strong>⚠ 12-Lead ECG Exam</strong></td>
+        <td rowspan="8" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ NTFIRE Interoperability / Safety</strong></td>
+        <td rowspan="8" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ Territory Response Group</strong><br><small style="font-weight:400;opacity:.85">Familiarisation / Safety</small></td>
+        <td rowspan="8" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ Darwin Airport Fire Interoperability / Safety</strong><br><small style="font-weight:400;opacity:.85">(Potentially FONA with visiting specialist)</small></td>
+        <td rowspan="8" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ TOLL Aeromedical Familiarisation / Safety</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">08:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">09:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">09:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">10:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">10:30</td>
+        <td rowspan="3" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ NTES Interoperability / Safety</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">11:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">11:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">12:00</td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">12:30</td>
+        <td rowspan="9" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Vertical Rescue / Cliffside Casualty Scenarios</strong><br><small style="font-weight:400;opacity:.85">Complex / complex | difficulty 4/4 × 2 Nightcliff / Esplanade</small></td>
+        <td rowspan="9" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Road Accident Rescue & USAR Scenarios</strong><br><small style="font-weight:400;opacity:.85">Complex / complex | difficulty 4/4</small></td>
+        <td rowspan="9" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Tactical / Ballistic Trauma Scenarios</strong><br><small style="font-weight:400;opacity:.85">Complex / complex | difficulty 4/4</small></td>
+        <td rowspan="9" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Airport Emergency Scenarios</strong><br><small style="font-weight:400;opacity:.85">Complex / complex | difficulty 4/4</small></td>
+        <td rowspan="6" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Aeromedical Exercise — Remote Bushland Patient & Stretcher Winch</strong><br><small style="font-weight:400;opacity:.85">Lee Point | complex / complex | difficulty 4/4</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">13:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">13:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">14:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">14:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">15:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">15:30</td>
+        <td rowspan="3" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Operational Readiness Phase Debrief</strong><br><small style="font-weight:400;opacity:.85">Questions for assessment week</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">16:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">16:30</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="wk-block" id="wk-w6">
+  <div class="wk-hdr" style="background:#2E6B8A">
+    <span class="wk-badge" style="border-color:#FFFFCC">Week 6</span>
+    <span class="wk-title">Week 6 — Assessment, Gap Analysis and Transition to Practicum</span>
+    <span class="wk-dates">Mon 31 Aug – Fri 4 Sep</span>
+  </div>
+  <div class="tt-wrap">
+  <table class="tt">
+    <thead>
+      <tr>
+        <th class="tt-th-time">TIME</th>
+<th class="tt-th-day"><div class="th-day">MON</div><div class="th-date">Mon 31 Aug</div></th>
+<th class="tt-th-day"><div class="th-day">TUE</div><div class="th-date">Tue 1 Sep</div></th>
+<th class="tt-th-day"><div class="th-day">WED</div><div class="th-date">Wed 2 Sep</div></th>
+<th class="tt-th-day"><div class="th-day">THU</div><div class="th-date">Thu 3 Sep</div></th>
+<th class="tt-th-day"><div class="th-day">FRI</div><div class="th-date">Fri 4 Sep</div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tt-time">08:00</td>
+        <td rowspan="8" class="tt-sess tt-exam" style="background:#FFD0D0;color:#5C0000"><strong>⚠ Formative Practical Assessments</strong><br><small style="font-weight:400;opacity:.85">Adult scenarios — AM block</small></td>
+        <td rowspan="8" class="tt-sess tt-exam" style="background:#FFD0D0;color:#5C0000"><strong>⚠ Formative Theory Viva Assessment / Exam</strong><br><small style="font-weight:400;opacity:.85">ECG Exam Viva — AM block</small></td>
+        <td rowspan="8" class="tt-sess tt-exam" style="background:#FFD0D0;color:#5C0000"><strong>⚠ Formative Practical Assessments — Paediatric</strong><br><small style="font-weight:400;opacity:.85">AM block</small></td>
+        <td rowspan="5" class="tt-sess tt-new" style="background:#B8F0D8;color:#003D18"><strong>★ Human Factors 5</strong><br><small style="font-weight:400;opacity:.85">Reflective Practice</small></td>
+        <td rowspan="8" class="tt-sess tt-exam" style="background:#FFD0D0;color:#5C0000"><strong>⚠ Supplementary Paediatric Scenario Assessment</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">08:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">09:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">09:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">10:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">10:30</td>
+        <td rowspan="3" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Gap Analysis</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">11:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">11:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">12:00</td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+        <td class="tt-sess tt-lunch tt-lunch" style="background:#EDEDED;color:#555555"><strong>──── LUNCH  1200–1230 ────</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">12:30</td>
+        <td rowspan="9" class="tt-sess tt-exam" style="background:#FFD0D0;color:#5C0000"><strong>⚠ Formative Practical Assessments — Adult</strong><br><small style="font-weight:400;opacity:.85">Continued PM block</small></td>
+        <td rowspan="9" class="tt-sess tt-skills" style="background:#E5D0F5;color:#2A0A50"><strong>Gap Analysis Practical Training</strong><br><small style="font-weight:400;opacity:.85">Exam Viva · Structured Skills Assessments</small></td>
+        <td rowspan="9" class="tt-sess tt-exam" style="background:#FFD0D0;color:#5C0000"><strong>⚠ Formative Practical Assessments — Paediatric</strong><br><small style="font-weight:400;opacity:.85">Continued PM block</small></td>
+        <td rowspan="9" class="tt-sess tt-sim" style="background:#C6ECCC;color:#0A380A"><strong>Practical Assessment Gap Analysis</strong><br><small style="font-weight:400;opacity:.85">Supplementary Adult Practical Scenario Assessment</small></td>
+        <td rowspan="4" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Online Learning / Block Modules</strong><br><small style="font-weight:400;opacity:.85">Theatre Placement Preparation</small></td>
+      </tr>
+      <tr>
+        <td class="tt-time">13:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">13:30</td>
+      </tr>
+      <tr>
+        <td class="tt-time">14:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">14:30</td>
+        <td rowspan="2" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Prepare for On-Road CRU Practicum</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">15:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">15:30</td>
+        <td rowspan="3" class="tt-sess tt-theory" style="background:#D0E8F8;color:#0A2840"><strong>Course Feedback & Close</strong></td>
+      </tr>
+      <tr>
+        <td class="tt-time">16:00</td>
+      </tr>
+      <tr>
+        <td class="tt-time">16:30</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<!-- ═══ STUDY GUIDE ═══ -->
+<div id="tab-studyguide" class="panel">
+  <div style="margin-bottom:18px">
+    <input class="sinput" type="text" placeholder="🔍  Search questions across all 26 parts…" oninput="filterSG(this.value)">
+  </div>
+  <div class="sg-grid" id="sg-grid"></div>
+</div>
+
+<!-- ═══ PROGRESS ═══ -->
+<div id="tab-tracker" class="panel">
+  <div class="pgrid" id="pgrid"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+// ─── STUDY GUIDE DATA ─────────────────────────────────────────────────────
+const SG=[
+  {id:'p1',n:1,title:'Advanced Homeostasis',wks:['w1'],qs:[
+    {n:'1.1',q:'Define: Mitochondria, Golgi apparatus, Lysosome, Ribosome, Cytoplasm, Cytosol, Organelles'},
+    {n:'1.2',q:'What is the plasma membrane?'},
+    {n:'1.3',q:'Discuss membrane transport mechanisms'},
+    {n:'1.4',q:'Discuss the Sodium/Potassium pump and its function'},
+    {n:'1.5',q:'Explain the differences between endocytosis and exocytosis'},
+  ]},
+  {id:'p2',n:2,title:'Cellular Respiration & Metabolism',wks:['w1'],qs:[
+    {n:'2.1',q:'Explain the process of glycolysis'},
+    {n:'2.2',q:'In the context of the hypoxic patient, explain how calcium is harmful'},
+    {n:'2.3',q:'List the by-products of anaerobic metabolism'},
+    {n:'2.4',q:'Explain the difference between aerobic and anaerobic metabolism'},
+    {n:'2.5',q:'What are the three energy sources of the body?'},
+    {n:'2.6',q:'How does decreased ATP production affect the Na\u207a/K\u207a pump in the hypoxic patient?'},
+  ]},
+  {id:'p3',n:3,title:'Acid Base Balance',wks:['w1'],qs:[
+    {n:'3.1',q:'In a septic shock patient, explain how the three buffer systems are affected'},
+    {n:'3.2',q:'How does the body regulate pH? How does each system work?'},
+    {n:'3.3',q:'Difference between DKA and HHTS?'},
+    {n:'3.4',q:'Role of lactic acid in disease'},
+    {n:'3.5',q:'Explain the disequilibrium equation and role of CO\u2082'},
+    {n:'3.6',q:'List causes of metabolic/respiratory acidosis and alkalosis'},
+    {n:'3.7',q:'How is O\u2082 and CO\u2082 transported around the body?'},
+    {n:'3.8',q:'Explain the correlation between EtCO\u2082 values and cardiac arrest'},
+    {n:'3.9',q:'Explain metabolic acidosis in hyperkalaemia and how sodium bicarbonate treats this'},
+  ]},
+  {id:'p4',n:4,title:'Fluids & Electrolytes',wks:['w1','w2'],qs:[
+    {n:'4.1',q:'What are the different fluid compartments present in the body?'},
+    {n:'4.2',q:"Explain the mechanism of action of Hartmann's solution"},
+    {n:'4.3',q:'How does dehydration occur?'},
+    {n:'4.4',q:'Explain how Anti Diuretic Hormone affects hydration'},
+    {n:'4.5',q:'Explain the difference between hyponatraemia and hypernatraemia'},
+    {n:'4.6',q:'Explain how the RAAS system maintains fluid balance'},
+    {n:'4.7',q:'Explain the adverse effects of crystalloids in trauma'},
+    {n:'4.8',q:'Name the different electrolytes and their roles'},
+  ]},
+  {id:'p5',n:5,title:'Cellular Immunity',wks:['w1','w2'],qs:[
+    {n:'5.1',q:'Explain the lymphatic system'},
+    {n:'5.2',q:'Explain the different types of immunity'},
+    {n:'5.3',q:'Explain the pathophysiology of anaphylaxis'},
+    {n:'5.4',q:'Explain the pathophysiology of asthma and COPD'},
+    {n:'5.5',q:'Explain the pathophysiology of type 1 diabetes mellitus'},
+    {n:'5.7',q:'What medications can cause anaphylaxis?'},
+    {n:'5.8',q:'Explain the process of inflammatory response'},
+    {n:'5.9',q:'List the different chemical mediators and their signs/symptoms in anaphylaxis'},
+  ]},
+  {id:'p6',n:6,title:'Cardiology',wks:['w1'],qs:[
+    {n:'6.1',q:'Explain pacemaker cells'},
+    {n:'6.2',q:'Explain cardiac action potential'},
+    {n:'6.3',q:'Explain actin, myosin, tropomyosin and troponin'},
+    {n:'6.4',q:'What are the 5 phases of the cardiac action potential? What happens during each?'},
+    {n:'6.5',q:'What are the absolute and relative refractory periods?'},
+    {n:'6.6',q:'What is the role of calcium in the myocardium?'},
+    {n:'6.7',q:'Discuss nervous system control of the heart. What differs between atria and ventricles?'},
+    {n:'6.8',q:'Explain the role of pacing in bradycardia'},
+    {n:'6.9',q:'Explain cardiac muscle contraction'},
+  ]},
+  {id:'p7',n:7,title:'Acute MI & Cardiogenic Shock',wks:['w1','w3'],qs:[
+    {n:'7.1',q:'What are the main coronary arteries and what myocardium do they perfuse?'},
+    {n:'7.2',q:'What is collateral circulation?'},
+    {n:'7.3',q:'Explain coronary circulation'},
+    {n:'7.4',q:'List the cardiovascular risk factors'},
+    {n:'7.5',q:'What is atherosclerosis and how does it compare to arteriosclerosis?'},
+    {n:'7.6',q:'Explain the pathophysiology of a right ventricular infarct'},
+    {n:'7.7',q:'Explain the pathophysiology of a posterior infarct'},
+    {n:'7.8',q:'Explain the role of GTN in ACS at the cellular level'},
+    {n:'7.9',q:'What is cardiogenic shock? What causes it?'},
+    {n:'7.10',q:'Explain the treatment for cardiogenic shock'},
+    {n:'7.11',q:'Why is JVD observed in cardiogenic shock?'},
+    {n:'7.12',q:'Explain the difference between adrenaline boluses and infusion in cardiogenic shock'},
+    {n:'7.13',q:'In coronary artery occlusion, explain cell death and what increased Na\u207a and Ca\u00b2\u207a in the ICF cause'},
+    {n:'7.14',q:'Why could an inferior STEMI present with no reciprocal changes?'},
+  ]},
+  {id:'p8',n:8,title:'Heart Failure, APO & Hypertension',wks:['w1','w3'],qs:[
+    {n:'8.1',q:'Explain the difference between primary and secondary hypertension'},
+    {n:'8.2',q:'Explain a hypertensive emergency'},
+    {n:'8.3',q:'How does renin, aldosterone and ADH lower blood pressure?'},
+    {n:'8.4',q:'Explain the difference between left and right sided heart failure'},
+    {n:'8.5',q:'Compare cardiogenic vs non-cardiogenic pulmonary oedema'},
+    {n:'8.6',q:'How does IPPV benefit patients with APO?'},
+    {n:'8.7',q:'Explain how diuretics assist in the management of ACPO'},
+    {n:'8.8',q:'Explain nephrogenic pulmonary oedema in the presence of missed dialysis'},
+    {n:'8.9',q:'What are the treatment options for nephrogenic pulmonary oedema?'},
+    {n:'8.10',q:'How is the RAAS affected in ACPO?'},
+  ]},
+  {id:'p9',n:9,title:'Crush Injury & Electrolyte Imbalance',wks:['w1','w2'],qs:[
+    {n:'9.1',q:'What are the causes of hyperkalaemia?'},
+    {n:'9.2',q:'How do Salbutamol, Calcium and Sodium Bicarbonate affect hyperkalaemia?'},
+    {n:'9.3',q:'Explain the ECG changes in hyperkalaemia'},
+    {n:'9.4',q:'What are the adverse effects of sodium bicarbonate and calcium gluconate?'},
+    {n:'9.5',q:'What are the arterial and venous mechanisms of crush injury?'},
+    {n:'9.6',q:'What are the complications of crush injury?'},
+    {n:'9.7',q:'What is the management of crush injury?'},
+    {n:'9.8',q:'Explain how missed dialysis can cause hyperkalaemia'},
+    {n:'9.9',q:'What is BRASH Syndrome?'},
+    {n:'9.10',q:'What medications can cause hyperkalaemia?'},
+    {n:'9.11',q:'Clinical causes of hypokalaemia?'},
+    {n:'9.12',q:'Management of hypokalaemia?'},
+    {n:'9.13',q:'ECG changes in hypokalaemia?'},
+    {n:'9.14',q:'Explain the difference between loop diuretics and potassium-sparing diuretics'},
+  ]},
+  {id:'p10',n:10,title:'Respiratory Physiology',wks:['w1'],qs:[
+    {n:'10.1',q:'What is the function and main anatomy of the respiratory system?'},
+    {n:'10.2',q:'Explain the different stages of ventilation'},
+    {n:'10.3',q:'How does the brain control respiration?'},
+    {n:'10.4',q:'Explain the stages of ventilation'},
+    {n:'10.5',q:'What is external and internal respiration?'},
+    {n:'10.6',q:'Explain the difference between left and rightward shift on the oxyhaemoglobin dissociation curve'},
+    {n:'10.7',q:'How could a tension pneumothorax occur in the asthmatic patient?'},
+    {n:'10.8',q:'Difference between chemoreceptors and baroreceptors?'},
+  ]},
+  {id:'p11',n:11,title:'12-Lead ECG Interpretation',wks:['w1','w2','w5'],qs:[
+    {n:'11.1',q:'Right bundle branch block — rate, regularity, P waves, PR, RR, QRS, pacemaker origin'},
+    {n:'11.2',q:'Left bundle branch block'},
+    {n:'11.3',q:'Right ventricular hypertrophy'},
+    {n:'11.4',q:'Left ventricular hypertrophy'},
+    {n:'11.5',q:'Pericarditis — characteristics and STEMI differentiation'},
+    {n:'11.6',q:'Benign early repolarisation'},
+    {n:'11.7',q:'Supraventricular Tachycardia — characteristics and management'},
+    {n:'11.8',q:'Ventricular Tachycardia — characteristics and management'},
+    {n:'11.9',q:'Torsades de Pointes — characteristics, causes, management'},
+    {n:'11.10',q:'Third degree AV block'},
+    {n:'11.11',q:'Brugada Syndrome'},
+    {n:'11.12',q:'Wolff-Parkinson-White Syndrome — characteristics and drug contraindications'},
+    {n:'11.13',q:'Hypertrophic obstructive cardiomyopathy'},
+    {n:'11.14',q:'Junctional bradycardia — characteristics and management'},
+  ]},
+  {id:'p12',n:12,title:'Autonomic Nervous System',wks:['w1','w2'],qs:[
+    {n:'12.1',q:'Explain the different divisions of the autonomic nervous system'},
+    {n:'12.2',q:'Explain the differences between the SNS and PNS'},
+    {n:'12.3',q:'Explain the pathophysiology of mouse spider venom'},
+    {n:'12.4',q:'Explain the pathophysiology of organophosphate poisoning'},
+    {n:'12.5',q:'How is noradrenaline regulated in the body?'},
+    {n:'12.6',q:'How do atropine, adrenaline and noradrenaline affect the cardiac system?'},
+  ]},
+  {id:'p13',n:13,title:'Anti-dysrhythmic Medications',wks:['w1','w2'],qs:[
+    {n:'13.1',q:'What is the Vaughan-Williams classification? Where do SJANT medications fit?'},
+    {n:'13.2',q:'What is the mechanism of action of amiodarone?'},
+    {n:'13.3',q:'What are the adverse effects of amiodarone (short and long term)?'},
+    {n:'13.4',q:'What is the mechanism of action of lignocaine?'},
+    {n:'13.5',q:'What are the adverse effects of lignocaine? Explain why they occur.'},
+    {n:'13.6',q:'What are the adverse effects of adrenaline? Explain how they occur.'},
+    {n:'13.7',q:'What are the adverse effects of atropine? Explain how they occur.'},
+    {n:'13.8',q:'What is the mechanism of action of magnesium?'},
+  ]},
+  {id:'p14',n:14,title:'Urinary System',wks:['w1'],qs:[
+    {n:'14.1',q:'Explain the functions of the renal system'},
+    {n:'14.2',q:'How is urine produced?'},
+    {n:'14.3',q:'Explain diabetes insipidus'},
+    {n:'14.4',q:'Explain the pathophysiology of chronic renal failure'},
+    {n:'14.5',q:'How does dialysis work?'},
+    {n:'14.6',q:'List complications of dialysis'},
+    {n:'14.7',q:'Explain the factors that affect glomerular filtration rate'},
+  ]},
+  {id:'p15',n:15,title:'Environmental Emergencies',wks:['w1','w2'],qs:[
+    {n:'15.1',q:"Explain Boyle's, Dalton's and Henry's Laws. How do these affect divers?"},
+    {n:'15.2',q:'What is decompression illness?'},
+    {n:'15.3',q:'List the stages of drowning'},
+    {n:'15.4',q:'Explain the complications of salt water vs fresh water pulmonary aspiration'},
+    {n:'15.5',q:'Explain how febrile convulsions occur in children'},
+    {n:'15.6',q:'Explain exertional hyperthermia and its complications'},
+    {n:'15.7',q:'Explain how hypothermia can cause bradycardia'},
+    {n:'15.8',q:'How are burns classified?'},
+    {n:'15.9',q:'How do you measure the percentage of burns?'},
+    {n:'15.10',q:'How can IV fluids in burns affect airways?'},
+  ]},
+  {id:'p16',n:16,title:'Toxicology',wks:['w3'],qs:[
+    {n:'16.1',q:'Explain the different classes of anti-depressants and how they work'},
+    {n:'16.2',q:'What is the mechanism of action for TCA toxicity in overdose?'},
+    {n:'16.3',q:'What are the cardiotoxic effects of TCAs in overdose? What medications manage these patients?'},
+    {n:'16.4',q:'Explain the different types of snake envenomation in the NT'},
+    {n:'16.5',q:'Explain the different types of marine envenomation in the NT'},
+    {n:'16.6',q:'What are the effects of an adrenaline infusion in a quetiapine overdose?'},
+    {n:'16.7',q:'What is the toxic dose of TCAs in adults and paediatrics?'},
+    {n:'16.8',q:'Explain serotonin syndrome'},
+  ]},
+  {id:'p17',n:17,title:'Airway Vortex',wks:['w1','w3'],qs:[
+    {n:'17.1',q:'What are the airway devices in the vortex and their associated lifelines?'},
+    {n:'17.2',q:'Explain the different CICO states'},
+    {n:'17.3',q:'What are the recommendations for surgical cricothyroidotomy? How do they change for small children?'},
+    {n:'17.4',q:'What would be the "best attempt" for a BVM?'},
+    {n:'17.5',q:'Explain why airway ramping is important and what is the goal?'},
+    {n:'17.6',q:'Explain how each 30-second drill assists with laryngoscopy'},
+    {n:'17.7',q:'Explain the differences between traditional laryngoscopy and video laryngoscopy'},
+    {n:'17.8',q:'Explain PEEP'},
+  ]},
+  {id:'p18',n:18,title:'Trauma',wks:['w2','w3'],qs:[
+    {n:'18.1',q:'Explain shock index'},
+    {n:'18.2',q:'How does an EtCO\u2082 value of <25mmHg signify hypovolaemia?'},
+    {n:'18.3',q:'What is the lethal diamond of death?'},
+    {n:'18.4',q:'How do packed red blood cells affect patients with traumatic haemorrhage?'},
+    {n:'18.5',q:'Explain the difference between needle thoracostomy, finger thoracostomy, pericardiocentesis and thoracotomy'},
+    {n:'18.6',q:'How does a chest seal work?'},
+    {n:'18.7',q:'Explain neurogenic shock'},
+    {n:'18.8',q:'How does Tranexamic Acid work?'},
+    {n:'18.9',q:'What is the mechanism of action of ketamine?'},
+    {n:'18.10',q:'What are the adverse effects of ketamine?'},
+    {n:'18.11',q:'How can ketamine affect the cardiac system?'},
+    {n:'18.12',q:'Why is hypothermia dangerous in trauma?'},
+    {n:'18.13',q:'What special considerations apply to paediatrics experiencing trauma?'},
+    {n:'18.14',q:'What special considerations apply to obstetric patients experiencing trauma?'},
+  ]},
+  {id:'p19',n:19,title:'Cardiac Arrest',wks:['w1','w2'],qs:[
+    {n:'19.1',q:"Explain how each of the 4H's and 4T's can be managed in cardiac arrest"},
+    {n:'19.2',q:'Explain how EtCO\u2082 is useful in cardiac arrest, advanced airway and CPR quality'},
+    {n:'19.3',q:'Differentiate between true and pseudo PEA'},
+    {n:'19.4',q:'What are the priorities in traumatic cardiac arrest?'},
+    {n:'19.5',q:'Explain the differences between LMA and ETT use in cardiac arrest'},
+    {n:'19.6',q:'Explain SALAD'},
+    {n:'19.7',q:'What are the benefits of mechanical CPR?'},
+    {n:'19.8',q:'What medication can be given to cease increased conscious state in mechanical CPR?'},
+  ]},
+  {id:'p20',n:20,title:'ROSC Management',wks:['w1','w2'],qs:[
+    {n:'20.1',q:'What physiological targets are aimed for in ROSC management?'},
+    {n:'20.2',q:'Why is a rise in EtCO\u2082 observed before ROSC?'},
+    {n:'20.3',q:'How is hyperoxia harmful in the ventilated patient?'},
+    {n:'20.4',q:'How does high tidal volume ventilation affect patients?'},
+    {n:'20.5',q:'Explain why adrenaline boluses are administered in the early stages of ROSC'},
+    {n:'20.6',q:'Explain how a fentanyl/midazolam infusion works in post-intubation sedation'},
+    {n:'20.7',q:'Explain how a ketamine infusion works in post-intubation sedation'},
+    {n:'20.8',q:'Explain how a morphine/midazolam infusion works in post-intubation sedation'},
+    {n:'20.9',q:'What benefit does a gastric tube add to a ventilated patient? What are the different insertion methods?'},
+    {n:'20.10',q:'How can you manage ROSC in a traumatic cardiac arrest?'},
+  ]},
+  {id:'p21',n:21,title:'Sepsis & Septic Shock',wks:['w1'],isNew:true,qs:[
+    {n:'21.1',q:'Define sepsis using the Sepsis-3 criteria. How does this differ from the older SIRS-based definition?'},
+    {n:'21.2',q:'Explain the pathophysiology of sepsis from initial infection through to multi-organ failure'},
+    {n:'21.3',q:'What is the clinical definition of septic shock? What differentiates it from sepsis?'},
+    {n:'21.4',q:'Explain the haemodynamic profile of septic shock (warm vs cold phenotype)'},
+    {n:'21.5',q:'What is lactic acidosis in sepsis? What does a rising lactate tell you about trajectory?'},
+    {n:'21.6',q:'What is the qSOFA score and how is it applied prehospital?'},
+    {n:'21.7',q:'What is the first-line vasopressor in septic shock? Explain its mechanism, preparation and titration.'},
+    {n:'21.8',q:'Explain fluid resuscitation targets in septic shock'},
+    {n:'21.9',q:'What is septic cardiomyopathy and how does it alter vasopressor selection?'},
+    {n:'21.10',q:'Explain the MAP target in septic shock and how it is calculated from a NIBP reading'},
+    {n:'21.11',q:'What are the NT-specific sepsis considerations?'},
+    {n:'21.12',q:'Explain the role of antibiotic timing in sepsis. What are the prehospital limitations?'},
+  ]},
+  {id:'p22',n:22,title:'Human Factors & CRM',wks:['w1','w2','w3','w4','w6'],isNew:true,qs:[
+    {n:'22.1',q:"Explain Endsley's three-level situational awareness model with a prehospital example of failure at each level"},
+    {n:'22.2',q:'What are the common SA failure modes? Define fixation, channel narrowing, cognitive overload, and complacency.'},
+    {n:'22.3',q:'What is the HeliNOTS framework? Name the five categories and one observable behavioural marker for each.'},
+    {n:'22.4',q:'Explain crew resource management (CRM) and how it applies to ICP practice'},
+    {n:'22.5',q:'What is closed-loop communication? Provide an example in drug administration during cardiac arrest.'},
+    {n:'22.6',q:'Explain the authority gradient problem in prehospital medicine'},
+    {n:'22.7',q:'Describe the Two-Challenge Rule and the PACE model. When would you use each?'},
+    {n:'22.8',q:'What are cognitive biases? Define anchoring, availability bias, confirmation bias, and premature closure.'},
+    {n:'22.9',q:'How does fatigue affect ICP performance? What functions are impaired first?'},
+    {n:'22.10',q:'Explain the role of checklists in reducing cognitive error'},
+    {n:'22.11',q:'What is psychological safety in a clinical team? What ICP behaviours create or undermine it?'},
+    {n:'22.12',q:'Explain dynamic subordination. When should an ICP defer and when must they assert authority?'},
+  ]},
+  {id:'p23',n:23,title:'Obstetrics & Maternal Health',wks:['w2'],isNew:true,qs:[
+    {n:'23.1',q:'Describe the major physiological changes of pregnancy affecting airway, cardiovascular, and respiratory systems'},
+    {n:'23.2',q:'Explain aortocaval compression — mechanism, gestation onset, and management including during CPR'},
+    {n:'23.3',q:'What is eclampsia? Describe its pathophysiology and differentiation from other seizure causes in pregnancy'},
+    {n:'23.4',q:'Explain the pharmacology of magnesium sulphate: mechanism, loading dose, rate, toxicity signs, and antidote'},
+    {n:'23.5',q:'Why must the magnesium sulphate loading dose be given over a minimum of 15 minutes?'},
+    {n:'23.6',q:'Define PPH. Explain the TONE/TISSUE/TRAUMA/THROMBIN framework and first-line management of uterine atony'},
+    {n:'23.7',q:'Explain the difference between placenta praevia and placental abruption in presentation and management'},
+    {n:'23.8',q:'Describe shoulder dystocia. Explain the HELPERR mnemonic and the most common prehospital error.'},
+    {n:'23.9',q:'Explain the APGAR scoring system. What is your management for an APGAR of 3 at 1 minute?'},
+    {n:'23.10',q:'Describe the physiological basis for difficulty of obstetric RSI compared to standard RSI'},
+    {n:'23.11',q:'What are the cultural safety obligations in NT for obstetric emergencies involving ATSI patients?'},
+    {n:'23.12',q:'Explain the management of ectopic pregnancy presenting with haemodynamic compromise'},
+  ]},
+  {id:'p24',n:24,title:'Paediatric Emergencies',wks:['w2'],isNew:true,qs:[
+    {n:'24.1',q:'Explain the Paediatric Assessment Triangle (PAT). What clinical impression does each component generate?'},
+    {n:'24.2',q:'Describe the key physiological differences between infants and adults across airway, breathing, and circulation'},
+    {n:'24.3',q:'Why is bradycardia a pre-arrest finding in infants? Explain the cardiac output formula.'},
+    {n:'24.4',q:'Describe compensated shock in a child. Why can blood pressure be normal despite significant hypovolaemia?'},
+    {n:'24.5',q:'Explain the Broselow tape and how it is applied'},
+    {n:'24.6',q:'Calculate the ETT size (uncuffed and cuffed) and insertion depth for children aged 2, 5, and 8 years'},
+    {n:'24.7',q:'What are the paediatric defibrillation energy levels?'},
+    {n:'24.8',q:'Describe paediatric adrenaline dosing in cardiac arrest'},
+    {n:'24.9',q:'Describe the approach to severe paediatric asthma including drug escalation and RSI indications'},
+    {n:'24.10',q:'What are the clinical features of non-accidental injury (NAI)? What is the NT mandatory reporting obligation?'},
+    {n:'24.11',q:'Explain the differences in newborn resuscitation, including NeopuffTM settings and compression ratios'},
+    {n:'24.12',q:'What are the NT-specific paediatric health considerations including RSV and Group A Streptococcal disease?'},
+  ]},
+  {id:'p25',n:25,title:'Neurological Emergencies & Stroke',wks:['w2','w3'],isNew:true,qs:[
+    {n:'25.1',q:'Explain the ROSIER score. Which item must always be checked BEFORE scoring and why?'},
+    {n:'25.2',q:'Differentiate ischaemic from haemorrhagic stroke in terms of pathophysiology and prehospital management'},
+    {n:'25.3',q:'What is the concept of "Last Known Well" and why is it more clinically important than time of discovery?'},
+    {n:'25.4',q:'What are stroke mimics? List the most common and explain which is the most dangerous to miss.'},
+    {n:'25.5',q:'Describe the Stroke Alert pre-notification — what 6 pieces of information must be communicated?'},
+    {n:'25.6',q:'Explain the pathophysiology and clinical presentation of subarachnoid haemorrhage (SAH)'},
+    {n:'25.7',q:'Explain prehospital BP management differences between ischaemic and haemorrhagic stroke'},
+    {n:'25.8',q:'Define status epilepticus. Describe the pharmacological escalation pathway.'},
+    {n:"25.9",q:"Explain Todd's palsy and how it may mimic stroke on the ROSIER score"},
+    {n:'25.10',q:'What are the time targets for stroke management and what is the ICP role in achieving them?'},
+    {n:'25.11',q:'Explain meningococcal disease — clinical features, management, and mandatory notification in the NT'},
+  ]},
+  {id:'p26',n:26,title:'Traumatic Brain Injury',wks:['w2','w3'],isNew:true,qs:[
+    {n:'26.1',q:'Explain the Monro-Kellie doctrine and its implications for managing expanding intracranial lesions'},
+    {n:'26.2',q:'Define cerebral perfusion pressure (CPP). Calculate MAP required for CPP \u226560mmHg if ICP is 25mmHg.'},
+    {n:'26.3',q:'What are the 6 modifiable secondary brain injury factors? State the mechanism and ICP-level intervention for each.'},
+    {n:'26.4',q:"Explain Cushing's triad — components, mechanism, and why you must NOT treat the hypertension"},
+    {n:'26.5',q:'Why is hyperventilation harmful in TBI? When is brief hyperventilation acceptable?'},
+    {n:'26.6',q:'What are the ICP-level criteria for RSI in the TBI patient? Why is GCS alone insufficient?'},
+    {n:'26.7',q:'Explain the current evidence on ketamine use in TBI. What is the historical concern?'},
+    {n:'26.8',q:'Describe the post-intubation management checklist for a TBI patient with all physiological targets'},
+    {n:'26.9',q:'Explain how a unilateral fixed dilated pupil indicates uncal herniation. Which side is the lesion?'},
+    {n:'26.10',q:'Describe the conflict between permissive hypotension and TBI. What MAP compromise is applied?'},
+  ]},
+];
+
+const WL={w1:'Week 1',w2:'Week 2',w3:'Week 3',w4:'Week 4',w5:'Week 5',w6:'Week 6'};
+const TIMES=['08:00','08:30','09:00','09:30','10:00','10:30','11:00','11:30',
+             '12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30',
+             '16:00','16:30'];
+
+const WKCOLORS={
+  w1:{hdr:'C0392B',lt:'FCEAE8'},w2:{hdr:'1A6FB5',lt:'E5EEF8'},
+  w3:{hdr:'1E7E4E',lt:'E4F3EB'},w4:{hdr:'7B3FA0',lt:'EFE5F5'},
+  w5:{hdr:'B85C00',lt:'F8EBD5'},w6:{hdr:'2E6B8A',lt:'DDE9F0'},
+};
+const TYPE_CSS={
+  theory:{bg:'D0E8F8',tx:'0A2840'},skills:{bg:'E5D0F5',tx:'2A0A50'},
+  sim:{bg:'C6ECCC',tx:'0A380A'},exam:{bg:'FFD0D0',tx:'5C0000'},
+  new:{bg:'B8F0D8',tx:'003D18'},lunch:{bg:'EDEDED',tx:'555555'},
+};
+
+// ─── TABS ──────────────────────────────────────────────────────────────────
+function showTab(t){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+t).classList.add('active');
+  document.querySelector(`[onclick="showTab('${t}')"]`).classList.add('active');
+  if(t==='studyguide'&&!document.getElementById('sg-grid').innerHTML)renderSG();
+  if(t==='tracker')renderProgress();
+}
+function jumpTo(id){
+  const el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ─── STUDY GUIDE ──────────────────────────────────────────────────────────
+function renderSG(){
+  const g=document.getElementById('sg-grid');
+  let h='';
+  SG.forEach(p=>{
+    const wb=p.wks.map(w=>`<span class="mb ${w}">${WL[w]}</span>`).join('');
+    const nb=p.isNew?`<span class="mb new">New 2026</span>`:'';
+    const qs=p.qs.map(q=>`<div class="sgq" id="q-${q.n.replace('.','_')}"><span class="sqn">${q.n}</span><span>${q.q}</span></div>`).join('');
+    h+=`<div class="sgp" id="${p.id}"><div class="sgph" onclick="tp('${p.id}')"><div class="pnum">${p.n}</div><div class="pinfo"><div class="ptitle">${p.title}</div><div class="pwb">${wb}${nb}</div></div><div class="pchev">▶</div></div><div class="sgqs">${qs}</div></div>`;
+  });
+  g.innerHTML=h;
+}
+function tp(id){document.getElementById(id).classList.toggle('open');}
+function filterSG(t){
+  const tl=t.toLowerCase().trim();
+  SG.forEach(p=>{
+    let any=false;
+    const el=document.getElementById(p.id);
+    if(!el)return;
+    p.qs.forEach(q=>{
+      const qEl=el.querySelector(`#q-${q.n.replace('.','_')}`);
+      if(!qEl)return;
+      const m=!tl||q.q.toLowerCase().includes(tl)||q.n.includes(tl)||p.title.toLowerCase().includes(tl);
+      qEl.style.display=m?'':'none';
+      if(m)any=true;
+    });
+    el.style.display=(!tl||any)?'':'none';
+    if(tl&&any)el.classList.add('open');
+    else if(!tl)el.classList.remove('open');
+  });
+}
+
+// ─── PROGRESS TRACKER ────────────────────────────────────────────────────
+function renderProgress(){
+  const saved=JSON.parse(localStorage.getItem('icp26p')||'{}');
+  const g=document.getElementById('pgrid');
+  let h='';
+  SG.forEach(p=>{
+    const tot=p.qs.length,done=p.qs.filter(q=>saved[q.n]).length,pct=Math.round(done/tot*100);
+    const nb=p.isNew?`<span class="new-badge">New 2026</span>`:'';
+    const qs=p.qs.map(q=>`<div class="qcheck ${saved[q.n]?'done':''}" id="qc-${q.n.replace('.','_')}"><input type="checkbox" id="cb-${q.n.replace('.','_')}" ${saved[q.n]?'checked':''} onchange="tq('${q.n}')"><label for="cb-${q.n.replace('.','_')}">${q.n} — ${q.q}</label></div>`).join('');
+    h+=`<div class="pcard"><div class="pcardtitle">Part ${p.n}: ${p.title}${nb}</div><div class="pbwrap"><div class="pb" id="pb-${p.id}" style="width:${pct}%"></div></div><div class="pstats"><span>${done} of ${tot} reviewed</span><span>${pct}%</span></div><div>${qs}</div></div>`;
+  });
+  g.innerHTML=h;
+}
+function tq(qn){
+  const s=JSON.parse(localStorage.getItem('icp26p')||'{}');
+  s[qn]=!s[qn];
+  localStorage.setItem('icp26p',JSON.stringify(s));
+  const k=qn.replace('.','_');
+  const r=document.getElementById('qc-'+k);
+  if(r)r.classList.toggle('done',!!s[qn]);
+  const part=SG.find(p=>p.qs.some(q=>q.n===qn));
+  if(!part)return;
+  const tot=part.qs.length,done=part.qs.filter(q=>s[q.n]).length,pct=Math.round(done/tot*100);
+  const pb=document.getElementById('pb-'+part.id);
+  if(pb)pb.style.width=pct+'%';
+  const card=pb&&pb.closest('.pcard');
+  if(card){const sp=card.querySelectorAll('.pstats span');if(sp[0])sp[0].textContent=`${done} of ${tot} reviewed`;if(sp[1])sp[1].textContent=`${pct}%`;}
+}
+
+// ─── GITHUB LIVE SYNC ────────────────────────────────────────────────────
+const GH_KEY = 'icp26-gh-url';
+
+function setStatus(msg, type){
+  const el = document.getElementById('gh-status');
+  el.textContent = msg;
+  el.className = `gh-status ${type}`;
+  el.style.display = msg ? '' : 'none';
+}
+
+function sessType(t){
+  if(!t)return 'theory';
+  if(t.includes('LUNCH'))return 'lunch';
+  if(t.includes('⚠'))return 'exam';
+  if(t.includes('★'))return 'new';
+  const tl=t.toLowerCase();
+  if(['skills','station'].some(x=>tl.includes(x)))return 'skills';
+  if(['simulation','scenario','exercise'].some(x=>tl.includes(x)))return 'sim';
+  return 'theory';
+}
+
+function fmtCell(text){
+  if(!text)return '';
+  const lines=text.split('\n');
+  const first=lines[0].trim();
+  const rest=lines.slice(1).map(l=>l.trim()).filter(Boolean).join(' ');
+  let out=`<strong>${first}</strong>`;
+  if(rest)out+=`<br><small style="font-weight:400;opacity:.85">${rest}</small>`;
+  return out;
+}
+
+function buildWeekHTML(wkKey, wkData){
+  const wc = WKCOLORS[wkKey];
+  const datesStr = wkData.dates[0]+' – '+wkData.dates[4];
+  let h = `<div class="wk-block" id="wk-${wkKey}">
+  <div class="wk-hdr" style="background:#${wc.hdr}">
+    <span class="wk-badge">${WL[wkKey]}</span>
+    <span class="wk-title">${wkData.title}</span>
+    <span class="wk-dates">${datesStr}</span>
+  </div>
+  <div class="tt-wrap">
+  <table class="tt">
+    <thead><tr>
+      <th class="tt-th-time">TIME</th>`;
+  wkData.dates.forEach(d=>{
+    const parts=d.split(' ');
+    h+=`<th class="tt-th-day"><div class="th-day">${(parts[0]||'').toUpperCase()}</div><div class="th-date">${d}</div></th>`;
+  });
+  h+='</tr></thead><tbody>';
+
+  const fill=[0,0,0,0,0];
+  TIMES.forEach((ts,ti)=>{
+    h+=`<tr><td class="tt-time">${ts}</td>`;
+    for(let di=0;di<5;di++){
+      if(fill[di]>0){fill[di]--;continue;}
+      const sess=wkData.days[di].find(s=>s.s===ti);
+      if(sess){
+        const rs=sess.e-sess.s;
+        fill[di]=rs-1;
+        const st=sessType(sess.t);
+        const c=TYPE_CSS[st];
+        const rsAttr=rs>1?` rowspan="${rs}"`:'';
+        const lc=st==='lunch'?' tt-lunch':'';
+        h+=`<td${rsAttr} class="tt-sess tt-${st}${lc}" style="background:#${c.bg};color:#${c.tx}">${fmtCell(sess.t)}</td>`;
+      }else{
+        h+='<td class="tt-empty"></td>';
+      }
+    }
+    h+='</tr>';
+  });
+  h+='</tbody></table></div></div>';
+  return h;
+}
+
+function parseXlsxToSchedule(wb){
+  const weekSheets = wb.SheetNames.filter(n=>n.startsWith('Wk'));
+  const sched={};
+  weekSheets.forEach(sn=>{
+    const ws=wb.Sheets[sn];
+    const range=XLSX.utils.decode_range(ws['!ref']||'A1:F22');
+    const rows=[];
+    for(let r=range.s.r;r<=Math.min(range.e.r,21);r++){
+      const row=[];
+      for(let c=0;c<=5;c++){
+        const cell=ws[XLSX.utils.encode_cell({r,c})];
+        row.push(cell?cell.v:null);
+      }
+      rows.push(row);
+    }
+    const title=rows[0]&&rows[0][0]?String(rows[0][0]):sn;
+    const venue=rows[1]&&rows[1][0]?String(rows[1][0]):'';
+    const dates=(rows[2]||[]).slice(1,6).map(v=>v?String(v):'');
+    const slotRows=rows.slice(4,22);
+    const days=[];
+    for(let di=0;di<5;di++){
+      const sessions=[];
+      let cur=null,curS=null;
+      slotRows.forEach((row,si)=>{
+        const val=row[di+1];
+        if(val!==null&&val!==undefined&&val!==''){
+          if(cur!==null)sessions.push({s:curS,e:si,t:String(cur)});
+          cur=val;curS=si;
+        }
+      });
+      if(cur!==null)sessions.push({s:curS,e:slotRows.length,t:String(cur)});
+      days.push(sessions);
+    }
+    const wn=sn.charAt(2);
+    sched[`w${wn}`]={title,venue,dates,days};
+  });
+  return sched;
+}
+
+async function loadFromGitHub(url){
+  setStatus('Fetching latest timetable from GitHub…','loading');
+  try{
+    const res=await fetch(url,{cache:'no-cache'});
+    if(!res.ok)throw new Error(`HTTP ${res.status}`);
+    const ab=await res.arrayBuffer();
+    const wb=XLSX.read(ab,{type:'array'});
+    const sched=parseXlsxToSchedule(wb);
+    let html='';
+    ['w1','w2','w3','w4','w5','w6'].forEach(wk=>{
+      if(sched[wk])html+=buildWeekHTML(wk,sched[wk]);
+    });
+    document.getElementById('tt-container').innerHTML=html;
+    setStatus('✓ Timetable up to date from GitHub','ok');
+    document.getElementById('sync-badge').style.display='';
+    document.getElementById('gh-clear-btn').style.display='';
+    localStorage.setItem('icp26-gh-url-ok','1');
+  }catch(e){
+    setStatus(`⚠ Could not fetch from GitHub: ${e.message}. Using embedded timetable.`,'err');
+  }
+}
+
+function saveGhUrl(){
+  const url=document.getElementById('gh-url').value.trim();
+  if(!url){setStatus('Please enter a valid URL','err');return;}
+  if(!url.includes('raw.githubusercontent.com')&&!url.startsWith('http')){
+    setStatus('URL should be a raw.githubusercontent.com link','err');return;
+  }
+  localStorage.setItem(GH_KEY, url);
+  loadFromGitHub(url);
+}
+
+function clearGhUrl(){
+  localStorage.removeItem(GH_KEY);
+  document.getElementById('gh-url').value='';
+  document.getElementById('gh-clear-btn').style.display='none';
+  document.getElementById('sync-badge').style.display='none';
+  setStatus('','');
+}
+
+// ─── INIT ────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded',()=>{
+  renderSG();
+  const savedUrl=localStorage.getItem(GH_KEY);
+  if(savedUrl){
+    document.getElementById('gh-url').value=savedUrl;
+    document.getElementById('gh-clear-btn').style.display='';
+    loadFromGitHub(savedUrl);
+  }
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){}});
+</script>
+</body>
+</html>
